@@ -21,5 +21,6 @@ You can use `make` to run the existent steps.
 There are still a couple of things to be done. Especially these two scenarios deserve a test:
 
 - Circular dependencies
+- Multi-stage build to ensure the runnable container stays small
 - Showcase the use of different package versions alongside each other, all handled with a central lock file
 - Release script
