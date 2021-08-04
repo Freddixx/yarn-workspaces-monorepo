@@ -1,0 +1,13 @@
+{
+  "name": "greeter-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.1.5",
+    "text-lib": "1.0.0"
+  }
+}
