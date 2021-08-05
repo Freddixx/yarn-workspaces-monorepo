@@ -15,12 +15,13 @@ You can use `make` to run the existent steps.
 - `make build` - builds the docker container
 - `make run` - runs it in deteached mode
 
+## Features
 
+- Only installs the dependencies which are strictly needed, thus keeping the production image small.
 ## To do: 
 
 There are still a couple of things to be done. Especially these two scenarios deserve a test:
 
 - Circular dependencies
-- Multi-stage build to ensure the runnable container stays small
 - Showcase the use of different package versions alongside each other, all handled with a central lock file
 - Release script

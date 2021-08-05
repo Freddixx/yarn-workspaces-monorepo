@@ -1,7 +1,7 @@
 FROM node:lts-slim
 EXPOSE 3000
 WORKDIR /app
-RUN yarn set version berry && yarn plugin import workspace-tools
+RUN yarn set version berry
 COPY . .
 WORKDIR /app/packages/greeter-service/
 RUN yarn workspaces focus --production
