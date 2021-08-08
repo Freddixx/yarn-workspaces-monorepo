@@ -4,24 +4,40 @@ This is an example repo which uses [Yarn Workspaces](https://yarnpkg.com/feature
 
 ## What's in this?
 
-The repo contains three packages, two of which are services and the third one (`text-lib`) is a shared library consumed by both.
+The repo contains a bunch of example packages:
 
-There is also a Dockerfile for the `greeter-service` which illustrates how a container can be build from source.
-
-You can use `make` to run the existent steps.
+- **`devtools`** is a fantasy CLI which helps managing node.js projects. It holds a cyclic dependency with `env-manager` to illustrate the use case.
+- **`env-manager`** is a simple shared library which only exists to depend on the made-up CLI `devtools`.
+- **`greeter-service`** is a very simple backend which runs on Hapi and is used to illustrate how a single service can be released out of a monorepo.
+- **`text-lib`** is a pain ol' shared library which is consumed by the `greeter-service`.
 
 ## How to run
 
-- `make build` - builds the docker container
-- `make run` - runs it in deteached mode
+Only `greeter-service` and `devtools` provide any runnable logic per se. The other two packages just exist in their workspace to show how code interacts in the context of a monorepo.
 
+### Greeter Service
+
+Inside `packages/greeter-service` you can use `make` to run the existent steps:
+
+- `make build` to build the production docker container for the service.
+- `make run` to run it on your machine
+
+### Devtools
+
+Since devtools is nothing much but a CLI, it cannot be productionised but only released:
+
+- `make release-minor` to release a new minor and automatically bump the new version on all of its consumers.
+
+- `make release-major` to do the same but with a major version instead.
 ## Features
 
-- Only installs the dependencies which are strictly needed, thus keeping the production image small.
+This sample monorepo supports a couple of use cases:
+
+- **Install necessary dependencies only**: In docker, only install the dependencies which are strictly needed, thus keeping the production image small.
+- **Automatic release and version bumping**: When a new version of a package is released, all consuming workspaces automatically get that version bumped in their deps tree.
+- **Cyclic dependencies**: Releases do not get messed up by a cyclic dependency.
 ## To do: 
 
 There are still a couple of things to be done. Especially these two scenarios deserve a test:
 
-- Circular dependencies
 - Showcase the use of different package versions alongside each other, all handled with a central lock file
-- Release script
