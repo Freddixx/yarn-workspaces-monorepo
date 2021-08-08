@@ -336,6 +336,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"devtools@1.0.0, devtools@workspace:packages/devtools":
+  version: 0.0.0-use.local
+  resolution: "devtools@workspace:packages/devtools"
+  dependencies:
+    env-manager: 1.0.0
+  bin:
+    devtools: ./index.js
+  languageName: unknown
+  linkType: soft
+
+"env-manager@1.0.0, env-manager@workspace:packages/env-manager":
+  version: 0.0.0-use.local
+  resolution: "env-manager@workspace:packages/env-manager"
+  dependencies:
+    devtools: 1.0.0
+  languageName: unknown
+  linkType: soft
+
 "farewell-service@workspace:packages/farewell-service":
   version: 0.0.0-use.local
   resolution: "farewell-service@workspace:packages/farewell-service"

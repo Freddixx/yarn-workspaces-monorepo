@@ -1,0 +1,12 @@
+{
+  "name": "env-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "packageManager": "yarn@3.0.0",
+  "scripts": {
+    "update": "devtools update"
+  },
+  "dependencies": {
+    "devtools": "1.0.0"
+  }
+}
