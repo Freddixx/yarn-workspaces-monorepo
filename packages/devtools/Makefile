@@ -9,11 +9,10 @@ build:
 	echo Building..
 	echo Testing..
 
-
 release-major: build
-  yarn version major
+	yarn version major
 	echo Releasing package to registry for external use..
 
 release-minor: build
-  yarn version minor
+	yarn version minor
 	echo Releasing package to registry for external use..
