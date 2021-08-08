@@ -9,7 +9,7 @@ The repo contains a bunch of example packages:
 - **`devtools`** is a fantasy CLI which helps managing node.js projects. It holds a cyclic dependency with `env-manager` to illustrate the use case.
 - **`env-manager`** is a simple shared library which only exists to depend on the made-up CLI `devtools`.
 - **`greeter-service`** is a very simple backend which runs on Hapi and is used to illustrate how a single service can be released out of a monorepo.
-- **`text-lib`** is a pain ol' shared library which is consumed by the `greeter-service`.
+- **`text-lib`** is a plain ol' shared library which is consumed by the `greeter-service`.
 
 ## How to run
 
